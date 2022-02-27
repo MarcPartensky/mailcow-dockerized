@@ -613,6 +613,7 @@ services:
 
 networks:
   mailcow-network:
+    driver: overlay
     # driver: bridge
     # driver_opts:
     #   com.docker.network.bridge.name: br-mailcow
