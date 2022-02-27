@@ -514,7 +514,7 @@ services:
       security_opt:
         - label=disable
       restart: unless-stopped
-      oom_kill_disable: true
+        # oom_kill_disable: true
       dns:
         - ${IPV4_NETWORK:-172.22.1}.254
       environment:
