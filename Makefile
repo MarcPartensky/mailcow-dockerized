@@ -1,4 +1,4 @@
 up:
-	docker stack deploy -c docker-compose.yml mailcow
+	docker stack deploy -c docker-compose.yml mail
 down:
-	docker stack rm mailcow
+	docker stack rm mail
