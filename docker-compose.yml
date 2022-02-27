@@ -381,6 +381,7 @@ services:
         caddy: mail.marcpartensky.com
         caddy.reverse_proxy: "{{upstreams 80}}"
       networks:
+        caddy:
         mailcow-network:
           aliases:
             - nginx
