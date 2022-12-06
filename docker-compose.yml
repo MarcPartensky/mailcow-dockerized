@@ -509,7 +509,7 @@ services:
         RSPAMD_THRESHOLD: ${RSPAMD_THRESHOLD:-5}
         OLEFY_THRESHOLD: ${OLEFY_THRESHOLD:-5}
         MAILQ_THRESHOLD: ${MAILQ_THRESHOLD:-20}
-      - ILQ_CRIT: ${MAILQ_CRIT:-30}
+        ILQ_CRIT: ${MAILQ_CRIT:-30}
       networks:
         mailcow-network:
           aliases:
@@ -524,8 +524,8 @@ services:
       dns:
         - ${IPV4_NETWORK:-172.22.1}.254
       environment:
-        - DBROOT=${DBROOT}
-        - TZ=${TZ}
+        DBROOT: ${DBROOT}
+        TZ: ${TZ}
       volumes:
         - /var/run/docker.sock:/var/run/docker.sock:ro
       networks:
@@ -541,9 +541,9 @@ services:
       ports:
         - "${SOLR_PORT:-127.0.0.1:18983}:8983"
       environment:
-        - TZ=${TZ}
-        - SOLR_HEAP=${SOLR_HEAP:-1024}
-        - SKIP_SOLR=${SKIP_SOLR:-y}
+        TZ: ${TZ}
+        SOLR_HEAP: ${SOLR_HEAP:-1024}
+        SKIP_SOLR: ${SKIP_SOLR:-y}
       networks:
         mailcow-network:
           aliases:
