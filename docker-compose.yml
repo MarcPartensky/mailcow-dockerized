@@ -587,35 +587,35 @@ services:
           aliases:
             - ofelia
 
-    ipv6nat-mailcow:
-      image: robbertkl/ipv6nat
-      restart: unless-stopped
-      depends_on:
-        - unbound-mailcow
-        - mysql-mailcow
-        - redis-mailcow
-        - clamd-mailcow
-        - rspamd-mailcow
-        - php-fpm-mailcow
-        - sogo-mailcow
-        - dovecot-mailcow
-        - postfix-mailcow
-        - memcached-mailcow
-        - nginx-mailcow
-        - acme-mailcow
-        - netfilter-mailcow
-        - watchdog-mailcow
-        - dockerapi-mailcow
-        - solr-mailcow
-      environment:
-        - TZ=${TZ}
-      security_opt:
-        - label=disable
-      privileged: true
-      network_mode: "host"
-      volumes:
-        - /var/run/docker.sock:/var/run/docker.sock:ro
-        - /lib/modules:/lib/modules:ro
+    # ipv6nat-mailcow:
+    #   image: robbertkl/ipv6nat
+    #   restart: unless-stopped
+    #   depends_on:
+    #     - unbound-mailcow
+    #     - mysql-mailcow
+    #     - redis-mailcow
+    #     - clamd-mailcow
+    #     - rspamd-mailcow
+    #     - php-fpm-mailcow
+    #     - sogo-mailcow
+    #     - dovecot-mailcow
+    #     - postfix-mailcow
+    #     - memcached-mailcow
+    #     - nginx-mailcow
+    #     - acme-mailcow
+    #     - netfilter-mailcow
+    #     - watchdog-mailcow
+    #     - dockerapi-mailcow
+    #     - solr-mailcow
+    #   environment:
+    #     - TZ=${TZ}
+    #   security_opt:
+    #     - label=disable
+    #   privileged: true
+    #   network_mode: "host"
+    #   volumes:
+    #     - /var/run/docker.sock:/var/run/docker.sock:ro
+    #     - /lib/modules:/lib/modules:ro
 
 networks:
   mailcow-network:
